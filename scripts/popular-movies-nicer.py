@@ -2,9 +2,9 @@ from pyspark import SparkConf, SparkContext
 
 def loadMovieNames():
     movieNames = {}
-    with open("ml-100k/u.ITEM") as f:
+    with open("../data/ml-100k/u.item", "r", encoding="ISO-8859-1") as f:
         for line in f:
-            fields = line.split('|')
+            fields = line.split("|")
             movieNames[int(fields[0])] = fields[1]
     return movieNames
 
